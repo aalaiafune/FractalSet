@@ -3,28 +3,34 @@ package fractalset;
 //by: alyssa a.
 
 public class Complex {
+
     private final double real;
     private final double imag;
 
-public Complex( double real, double imag ) {
-    this.real = real;
-    this.imag = real;
-}
+    public Complex(double real, double imag) {
+        this.real = real;
+        this.imag = imag;
+    }
 
-public Complex add( Complex other ) {
-    double r = this.real + other.real;
-    double i = this.imag + other.imag;
-    return new Complex( r, i);
-}
+    public Complex add(Complex other) {
+        double r = this.real + other.real;
+        double i = this.imag + other.imag;
+        return new Complex(r, i);
+    }
 
-public Complex multiply ( Complex other ) {
-    double r = this.real * other.real - this.imag * other.imag;
-    double i = this.real * other.imag + this.imag * other.real;
-    return new Complex( r, i );
-}
+    public Complex multiply(Complex other) {
+        double r = this.real * other.real - this.imag * other.imag;
+        double i = this.real * other.imag + this.imag * other.real;
+        return new Complex(r, i);
+    }
 
-public double magnitudeSquared() {
-    return this.real * this.real + this.imag * this.imag;
-}
+    public double magnitudeSquared() {
+        return this.real * this.real + this.imag * this.imag;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("(%8.4f,%8.4f)", this.real, this.imag);
+    }
 
 }
